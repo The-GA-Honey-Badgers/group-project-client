@@ -4,8 +4,13 @@ body {
   background: lightgray;
 }
 
+// Header & Nav styling, keep towards the top.
+#header {
+  position: sticky;
+}
 .navbar {
   background: #457B9D;
+  height: 4.5rem;
 }
 .nav-btn, .submitBtn {
   background-color: #457B9D;
@@ -16,4 +21,27 @@ body {
       color: #14253E;
       border: 1px #5590B4 solid;
     }
+}
+
+
+
+
+// Footer styling, keep at the bottom.
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: #457B9D;
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin-top: .5rem;
 }
