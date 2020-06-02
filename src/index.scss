@@ -1,5 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: #F1FAEE;
+  background: lightgray;
+}
+
+.navbar {
+  background: #457B9D;
+}
+.nav-btn, .submitBtn {
+  background-color: #457B9D;
+  color: white;
+  border: 1px #457B9D solid;
+    &:hover {
+      background-color: #6499B9;
+      color: #14253E;
+      border: 1px #5590B4 solid;
+    }
 }
