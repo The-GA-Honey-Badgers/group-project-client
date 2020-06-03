@@ -1,0 +1,54 @@
+$groupRed: #A31420;
+
+.create-post-header {
+  padding: 10px;
+  margin: -15px 35px 50px 35px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #457B9D;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+
+.form-field-label {
+  font-weight:bold;
+  font-size: 1.5rem;
+}
+.form-input-space {
+  border: 1px solid black;
+}
+
+
+.post-action-btn {
+  background-color: $groupRed;
+  color: white;
+  border: 1px $groupRed solid;
+    &:hover {
+      background-color: transparent;
+      color: $groupRed;
+      border: 1px $groupRed solid;
+    }
+}
+
+.body-wrapper {
+  // border: 0px 0px 0px 50px $groupRed solid;
+  // border-color: $groupRed;
+  // min-height: 100%;
+  // width: 5%;
+  // background-color: $groupRed;
+  border-left: 25px solid $groupRed
+}
+
+.content-wrapper {
+  padding: 50px;
+  background-color: white;
+  border-top: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 10px 10px gray;
+}
