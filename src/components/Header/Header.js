@@ -30,7 +30,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar className='navbar' variant="dark" expand="md">
     <Navbar.Brand href="#">
-      honey-badgers-client
+      <b>Envoy</b>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
