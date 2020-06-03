@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
@@ -12,7 +13,6 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import PostCreate from '../CreatePost/PostCreate'
 import PostIndex from '../PostIndex/PostIndex'
 import ShowPost from '../ShowPost/ShowPost'
-
 
 class App extends Component {
   constructor () {
@@ -37,41 +37,48 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header user={user} />
-        {msgAlerts.map((msgAlert, index) => (
-          <AutoDismissAlert
-            key={index}
-            heading={msgAlert.heading}
-            variant={msgAlert.variant}
-            message={msgAlert.message}
-          />
-        ))}
-        <main className="container">
-          <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path="/post-create" render={() => (
-            <PostCreate msgAlert={this.msgAlert} user={user} />
-          )} />
-          <Route exact path='/' component={PostIndex} />
-          <Route exact path='/posts/:id' render={({ match }) => {
-            const currentPost = match.params.id
-            return (
-              <ShowPost
-                postId={currentPost}
-              />
-            )
-          }} />
-        </main>
+        <div id="page-container">
+          <Fragment>
+            <div id="content-wrap">
+              <Header id="header" user={user} />
+              {msgAlerts.map((msgAlert, index) => (
+                <AutoDismissAlert
+                  key={index}
+                  heading={msgAlert.heading}
+                  variant={msgAlert.variant}
+                  message={msgAlert.message}
+                />
+              ))}
+              <main className="container">
+                <Route path='/sign-up' render={() => (
+                  <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+                )} />
+                <Route path='/sign-in' render={() => (
+                  <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+                )} />
+                <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+                  <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+                )} />
+                <AuthenticatedRoute user={user} path='/change-password' render={() => (
+                  <ChangePassword msgAlert={this.msgAlert} user={user} />
+                )} />
+                <AuthenticatedRoute user={user} exact path="/post-create" render={() => (
+                  <PostCreate msgAlert={this.msgAlert} user={user} />
+                )} />
+                <Route exact path='/' component={PostIndex} />
+                <Route exact path='/posts/:id' render={({ match }) => {
+                  const currentPost = match.params.id
+                  return (
+                    <ShowPost
+                      postId={currentPost}
+                    />
+                  )
+                }} />
+              </main>
+            </div>
+          </Fragment>
+          <div id="footer"><Footer /></div>
+        </div>
       </Fragment>
     )
   }
