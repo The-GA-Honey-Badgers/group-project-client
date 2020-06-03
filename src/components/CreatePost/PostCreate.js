@@ -59,7 +59,6 @@ class PostCreate extends Component {
   }
 
   handleLocalSubmit = (event) => {
-    // const imgUrl = this.state.post.imgUrl
     const form = event.target
     const formData = new FormData(form)
     event.preventDefault()
