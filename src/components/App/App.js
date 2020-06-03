@@ -60,12 +60,6 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path="/post" render={() => (
             <PostCreate msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path="/posts" render={() => (
-            <PostIndex msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path="/posts-mine" render={() => (
-            <PostShow msgAlert={this.msgAlert} user={user} />
-          )} />
         </main>
       </Fragment>
     )
