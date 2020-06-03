@@ -30,13 +30,15 @@ class PostCreate extends Component {
   }
 
   handleWordSubmit = (event) => {
+    console.log(this.props.user.token)
     event.preventDefault()
     axios({
       method: 'POST',
       url: `${apiUrl}/posts`,
-      data: {
-        post: this.state.post
-      }
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      },
+      data: { post: this.state.post }
     })
       .then(res => {
         return this.setState({ post: res.data.post })
@@ -47,7 +49,7 @@ class PostCreate extends Component {
         variant: 'success'
       }))
       .catch(error => {
-        this.setState({ post: null })
+        this.setState({ post: {} })
         this.props.msgAlert({
           heading: 'Submit Post Fail' + error.message,
           message: 'Create Post Failed',
@@ -80,7 +82,7 @@ class PostCreate extends Component {
         variant: 'success'
       }))
       .catch(error => {
-        this.setState({ post: null })
+        this.setState({ post: {} })
         this.props.msgAlert({
           heading: 'Upload Image Fail' + error.message,
           message: 'Create Image Failed',
@@ -116,7 +118,7 @@ class PostCreate extends Component {
         variant: 'success'
       }))
       .catch(error => {
-        this.setState({ post: null })
+        this.setState({ post: {} })
         this.props.msgAlert({
           heading: 'Upload Image Fail' + error.message,
           message: 'Create Image Failed',
