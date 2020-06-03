@@ -14,10 +14,13 @@ class PostShow extends Component {
   componentDidMount () {
     // this will run after the first render() runs
     // api request happen here
+    const userid = this.props.user._id
     axios(`${apiUrl}/posts`)
       .then(res => {
-        this.setState({ posts: res.data.posts })
+        const respost = res.data.posts
+        return respost.filter(post => post.owner._id === userid)
       })
+      .then(posts => this.setState({ posts: posts }))
       .catch(console.error)
   }
 
