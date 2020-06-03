@@ -10,7 +10,7 @@ const Comments = props => {
     <div>
       {postComments.map(comment => (
         <div className='comment' key={comment._id}>
-          <div>{comment.author.username}</div>
+          <div>username</div>
           <div>{comment.body}</div>
         </div>
       ))}

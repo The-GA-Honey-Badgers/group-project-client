@@ -91,47 +91,10 @@ class PostCreate extends Component {
       })
   }
 
-  handleUrlChange = (event) => {
-    const updatedField = { [event.target.name]: event.target.value }
-    const updatedUrl = Object.assign(this.state, updatedField)
-    this.setState({ url: updatedUrl })
-  }
-
-  handleUrlSubmit = (event) => {
-    event.preventDefault()
-    axios({
-      method: 'POST',
-      url: `${apiUrl}/uploads`,
-      data: this.state.url
-
-    })
-      .then(res => {
-        const imgUrl = { imgUrl: res.data.upload.imageUrl }
-        const newState = Object.assign({}, this.state.post, imgUrl)
-        return this.setState({ post: newState })
-      })
-      // .then(res => this.props.setUrl({ url: res.data.post.image }))
-      // .then(res => this.setState({ post: res.data.post }))
-      .then(() => this.props.msgAlert({
-        heading: 'Upload Image Success',
-        message: 'Create Image successfully!',
-        variant: 'success'
-      }))
-      .catch(error => {
-        this.setState({ post: {} })
-        this.props.msgAlert({
-          heading: 'Upload Image Fail' + error.message,
-          message: 'Create Image Failed',
-          variant: 'danger'
-        })
-      })
-  }
-
   Example = () => {
     const [show, setShow] = useState(false)
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-    const { url } = this.state
     return (
       <div>
         <Button variant="primary" onClick={handleShow}>
@@ -140,19 +103,12 @@ class PostCreate extends Component {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>You can choose any way you like!</Modal.Title>
+            <Modal.Title>Upload Your favourite Image !</Modal.Title>
           </Modal.Header>
           <Form onSubmit = {this.handleLocalSubmit} >
             <Form.Control name="file" type="file" />
             <Button variant="primary" type="submit">
             upload
-            </Button>
-          </Form>
-          <Form onSubmit = {this.handleUrlSubmit}>
-            <Form.Label>Image Url</Form.Label>
-            <Form.Control required onChange={this.handleUrlChange} value={url} name="url" type="text" placeholder="Your Image Url (optional)" />
-            <Button variant="primary" type="submit">
-            Add Url
             </Button>
           </Form>
           <Modal.Footer>

@@ -6,14 +6,18 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import './postIndex.scss'
 
-const PostIndex = () => {
+const PostIndex = (props) => {
   const [posts, setPosts] = useState(null)
 
   useEffect(() => {
     axios(`${apiUrl}/posts`)
       .then(res => {
+        const respost = res.data.posts
+        return respost.filter(post => post.owner._id === props.user._id)
+      })
+      .then(response => {
         // console.log(res.data.posts)
-        setPosts(res.data.posts)
+        setPosts(response)
       })
       .catch(console.error)
   }, [])

@@ -12,7 +12,9 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 
 import PostCreate from '../CreatePost/PostCreate'
 import PostIndex from '../PostIndex/PostIndex'
+import MyPost from '../PostIndex/MyPost'
 import ShowPost from '../ShowPost/ShowPost'
+import PostUpdate from '../UpdatePost/PostUpdate'
 
 class App extends Component {
   constructor () {
@@ -65,12 +67,27 @@ class App extends Component {
                 <AuthenticatedRoute user={user} exact path="/post-create" render={() => (
                   <PostCreate msgAlert={this.msgAlert} user={user} />
                 )} />
+                <AuthenticatedRoute user={user} path='/my-post' render={() => (
+                  <MyPost msgAlert={this.msgAlert} user={user} />
+                )} />
                 <Route exact path='/' component={PostIndex} />
                 <Route exact path='/posts/:id' render={({ match }) => {
                   const currentPost = match.params.id
                   return (
                     <ShowPost
                       postId={currentPost}
+                      user={user}
+                      msgAlert={this.msgAlert}
+                    />
+                  )
+                }} />
+                <Route path= {'/posts/:id/post-update'} render={({ match }) => {
+                  const currentPost = match.params.id
+                  return (
+                    <PostUpdate
+                      postId={currentPost}
+                      msgAlert={this.msgAlert}
+                      user = {user}
                     />
                   )
                 }} />

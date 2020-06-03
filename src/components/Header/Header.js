@@ -7,6 +7,7 @@ const navbarTextStyle = {
 
 const authenticatedOptions = (
   <Fragment>
+    <Nav.Link href="#my-post"><Button className='nav-btn'>My Post</Button></Nav.Link>
     <Nav.Link href="#post-create"><Button className='nav-btn'>Create Post</Button></Nav.Link>
     <Nav.Link href="#change-password"><Button className='nav-btn'>Change Password</Button></Nav.Link>
     <Nav.Link href="#sign-out"><Button className='nav-btn'>Sign Out</Button></Nav.Link>
@@ -22,7 +23,7 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link to="/"><Button className='nav-btn'>Home</Button></Nav.Link>
+    <Nav.Link href="#/"><Button className='nav-btn'>Home</Button></Nav.Link>
   </Fragment>
 )
 
