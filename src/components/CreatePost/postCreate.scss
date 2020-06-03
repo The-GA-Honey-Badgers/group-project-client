@@ -24,7 +24,7 @@ $groupRed: #A31420;
 .post-action-btn {
   background-color: $groupRed;
   color: white;
-  border: 1px $groupRed solid;
+  border: 1px black solid;
     &:hover {
       background-color: transparent;
       color: $groupRed;
@@ -32,15 +32,11 @@ $groupRed: #A31420;
     }
 }
 
-.body-wrapper {
-  // border: 0px 0px 0px 50px $groupRed solid;
-  // border-color: $groupRed;
-  // min-height: 100%;
-  // width: 5%;
-  // background-color: $groupRed;
-  border-left: 25px solid $groupRed
-}
 
+// <-- Form Field background styling -->
+.body-wrapper {
+  border-left: 20px solid $groupRed;
+}
 .content-wrapper {
   padding: 50px;
   background-color: white;
