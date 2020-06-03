@@ -4,9 +4,29 @@ body {
   background: lightgray;
 }
 
-// Header & Nav styling, keep towards the top.
+
+// <-- Scrollbar Style Grouping -->
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black;
+}
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+background: linear-gradient(231deg, rgba(69,123,157,1) 13%, rgba(230,57,70,1) 51%, rgba(69,123,157,1) 94%);
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(231deg, rgba(230,57,70,1) 13%, rgba(69,123,157,1) 51%, rgba(230,57,70,1) 94%);
+  border-radius: 20px;
+  border: 1px solid white;
+}
+// <-- END Scrollbar -->
+
+// <-- Header & Nav styling, keep towards the top -->
 #header {
-  position: sticky;
+  position: fixed;
+  top: 0;
 }
 .navbar {
   background: #457B9D;
@@ -23,12 +43,14 @@ body {
       border: 1px #5590B4 solid;
     }
 }
+// <-- END Header/Nav -->
 
 
 
 
 
-// Footer styling, keep at the bottom.
+
+// <-- Footer styling, keep at the bottom -->
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -49,3 +71,4 @@ body {
   margin-top: .5rem;
   border-top: 1px black solid;
 }
+// <-- END Footer -->
