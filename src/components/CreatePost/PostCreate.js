@@ -98,12 +98,11 @@ class PostCreate extends Component {
     return (
       <div>
         <Button variant="primary" onClick={handleShow}>
-        Upload Image
+        Add an Image
         </Button>
-
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Upload Your favourite Image !</Modal.Title>
+            <Modal.Title>Upload Your Image</Modal.Title>
           </Modal.Header>
           <Form onSubmit = {this.handleLocalSubmit} >
             <Form.Control name="file" type="file" />
@@ -112,9 +111,6 @@ class PostCreate extends Component {
             </Button>
           </Form>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-            Close
-            </Button>
             <Button variant="primary" onClick={handleClose}>
             Save Changes
             </Button>
@@ -146,9 +142,6 @@ class PostCreate extends Component {
                 Submit
               </Button>
             </Form>
-            <Card.Text>
-               If you want to upload local image please use following button
-            </Card.Text>
             <this.Example />
           </Card.Body>
         </Card>
