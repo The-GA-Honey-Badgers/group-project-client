@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import EnvoyIcon from '../../Envoy.png'
-import './postIndex.scss'
+import './postIndexShow.scss'
 
 const PostIndex = () => {
   const [posts, setPosts] = useState(null)
@@ -57,7 +57,11 @@ const PostIndex = () => {
           </Card.Body>
         </Card>
       ))}
-      <p>Latest Posts</p>
+      <div id="latestPostsWrapper">
+        <div id="latestPostsBanner">
+          Latest Posts . . .
+        </div>
+      </div>
     </div>
   )
 }

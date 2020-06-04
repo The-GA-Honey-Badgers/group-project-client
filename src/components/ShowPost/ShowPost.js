@@ -9,7 +9,7 @@ import Comments from '../Comments/Comments'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import EnvoyIcon from '../../Envoy.png'
-import './showPost.scss'
+// <-- stylesheet inherited from 'PostIndex.js' -->
 
 const ShowPost = (props) => {
   const [post, setPost] = useState(null)
