@@ -15,6 +15,8 @@ import PostIndex from '../PostIndex/PostIndex'
 import MyPost from '../PostIndex/MyPost'
 import ShowPost from '../ShowPost/ShowPost'
 import PostUpdate from '../UpdatePost/PostUpdate'
+import CommentCreate from '../CommentCreate/CommentCreate'
+import CommentUpdate from '../CommentUpdate/CommentUpdate'
 
 class App extends Component {
   constructor () {
@@ -71,7 +73,7 @@ class App extends Component {
                   <MyPost msgAlert={this.msgAlert} user={user} />
                 )} />
                 <Route exact path='/' component={PostIndex} />
-                <Route exact path='/posts/:id' render={({ match }) => {
+                <Route path='/posts/:id' render={({ match }) => {
                   const currentPost = match.params.id
                   return (
                     <ShowPost
@@ -81,13 +83,31 @@ class App extends Component {
                     />
                   )
                 }} />
-                <Route path= {'/posts/:id/post-update'} render={({ match }) => {
+                <Route exact path= {'/posts/:id/post-update'} render={({ match }) => {
                   const currentPost = match.params.id
                   return (
                     <PostUpdate
                       postId={currentPost}
                       msgAlert={this.msgAlert}
                       user = {user}
+                    />
+                  )
+                }} />
+                <AuthenticatedRoute user={user} exact path='/posts/:id/comment-create' render={({ match }) => {
+                  const postId = match.params.id
+                  return (
+                    <CommentCreate
+                      user={user}
+                      postId={postId}
+                    />
+                  )
+                }} />
+                <AuthenticatedRoute user={user} exact path='/posts/:id/comment-update/:commentid' render={({ match }) => {
+                  const commentId = match.params.commentid
+                  return (
+                    <CommentUpdate
+                      commentId={commentId}
+                      user={user}
                     />
                   )
                 }} />
