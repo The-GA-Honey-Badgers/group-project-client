@@ -7,7 +7,6 @@ import Comments from '../Comments/Comments'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import './showPost.scss'
-import { Link } from 'react-router-dom'
 
 const ShowPost = (props) => {
   const [post, setPost] = useState(null)
@@ -72,10 +71,13 @@ const ShowPost = (props) => {
           </div>
         </div>
         <div className="buttonBox">
-          <Button onClick={handleclick} className="button">Delete Post</Button>
-          <Button as={Link} to={props.match.url + '/post-update'} className="button">Update Post</Button>
+          { props.user &&
+          <div>
+            <Button onClick={handleclick} className="button">Delete Post</Button>
+            <Button as={Link} to={props.match.url + '/post-update'} className="button">Update Post</Button>
+          </div> }
           <Button as={Link} to='/' className="button">Main Feed</Button>
-          <Button as={Link} to={`/posts/${props.postId}/comment-create`} className="button">Create Comment</Button>
+          { props.user && <Button as={Link} to={`/posts/${props.postId}/comment-create`} className="button">Create Comment</Button>}
         </div>
         {commentsJsx}
       </Card.Body>
