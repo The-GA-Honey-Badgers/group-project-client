@@ -22,11 +22,12 @@ const PostIndex = (props) => {
       .catch(console.error)
   }, [])
 
-  const img = false
-  const imgJsx = <Card.Img className="postImage" variant="bottom" src="https://digitalmarketing.blob.core.windows.net/7462/images/items/image568841.jpg" />
-
   if (!posts) {
     return <p>Loading....</p>
+  }
+
+  if (posts.length === 0) {
+    return <p>There are no posts yet!!! Make one!</p>
   }
 
   return (
@@ -37,24 +38,27 @@ const PostIndex = (props) => {
           <Card.Body className="postContent">
             <div className="textBox">
               <img className="icon" src="https://us.123rf.com/450wm/andrey1978/andrey19781505/andrey1978150500065/39845361-stock-vector-cartoon-badger-children-illustration.jpg?ver=6"/>
-              <p className="postInfo">username</p>
-              <p className="postInfo">Posted on 6/2/2020</p>
+              <p className="postInfo">{post.owner ? post.owner.email : 'USERNAME'}</p>
+              <p className="postInfo">Posted on {post.createdAt ? post.createdAt.split('T')[0] : 'DATE'}</p>
             </div>
             <div>
               {post.imgUrl && <Card.Img className="postImage" variant="bottom" src={post.imgUrl} />}
-              {img && imgJsx}
-              <div className="postTextBody">
+              <div className="postTextTitle">
                 {post.title}
+              </div>
+              <div className="postTextBody">
+                {post.body}
+              </div>
+              <div className="commentStatsBody">
+                {post.comments.length} Comments
               </div>
             </div>
             <div className="buttonBox">
               <Button as={Link} to={`/posts/${post._id}`} className="button">View Post</Button>
-              <Button as={Link} to='/' className="button">Add Comment</Button>
             </div>
           </Card.Body>
         </Card>
       ))}
-      <p>Latest Posts</p>
     </div>
   )
 }
