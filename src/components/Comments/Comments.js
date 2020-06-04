@@ -2,14 +2,21 @@ import React from 'react'
 import './comments.scss'
 import { withRouter } from 'react-router'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
 const Comments = props => {
-  // console.log('Props: ', props)
   const user = props.user
   const postComments = props.commentArray
+
+  const onUpdateClick = commentId => {
+    console.log('hello, world!')
+    // console.log('the commentId: ', commentId)
+    props.updateModal({
+      update: true,
+      commentId: commentId
+    })
+  }
 
   const onCommentDelete = (commentId, postId) => {
     axios({
@@ -20,7 +27,7 @@ const Comments = props => {
       }
     })
       .then(() => {
-        console.log('success!')
+        props.setRefresh(true)
       })
       .catch(console.error)
   }
@@ -36,7 +43,7 @@ const Comments = props => {
             </div>
             {user &&
             <div className="buttonContainer">
-              <Button as={Link} to={`/posts/${comment.postId}/comment-update/${comment._id}`} className="button">Update</Button>
+              <Button onClick={() => onUpdateClick(comment._id)} className="button">Update</Button>
               <Button className="button" onClick={() => onCommentDelete(comment._id, comment.postId)}>Delete</Button>
             </div>}
           </div>
