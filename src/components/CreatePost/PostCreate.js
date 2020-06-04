@@ -1,10 +1,9 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import Modal from 'react-bootstrap/Modal'
+import { Form, Button } from 'react-bootstrap'
+// import postCreate stylesheet
+import './postCreate.scss'
 
 class PostCreate extends Component {
   constructor (props) {
@@ -59,7 +58,6 @@ class PostCreate extends Component {
   }
 
   handleLocalSubmit = (event) => {
-    // const imgUrl = this.state.post.imgUrl
     const form = event.target
     const formData = new FormData(form)
     event.preventDefault()
@@ -91,67 +89,63 @@ class PostCreate extends Component {
       })
   }
 
-  Example = () => {
-    const [show, setShow] = useState(false)
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+  InlineImgUpload = () => {
     return (
-      <div>
-        <Button variant="primary" onClick={handleShow}>
+      <Form onSubmit = {this.handleLocalSubmit} >
+        <Form.Control name="file" type="file" />
+        <button type="submit">
         Upload Image
-        </Button>
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Upload Your favourite Image !</Modal.Title>
-          </Modal.Header>
-          <Form onSubmit = {this.handleLocalSubmit} >
-            <Form.Control name="file" type="file" />
-            <Button variant="primary" type="submit">
-            upload
-            </Button>
-          </Form>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-            Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-            Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+        </button>
+        <Form.Text className="text-muted">
+          Remember to upload an image <b>before</b> submitting your post.
+        </Form.Text>
+      </Form>
     )
   }
 
   render () {
-    const { title, body, imgUrl } = this.state
+    const { title, body } = this.state
     return (
-      <div>
-        <h3>Create Post</h3>
-        <img src= {this.state.post.imgUrl} style={{ maxWidth: '50%' }} />
-        <Card style={{ width: '66%' }}>
-          <Card.Img variant="top" src={imgUrl} />
-          <Card.Body>
-            <Form onSubmit={this.handleWordSubmit} >
-              <Form.Group controlId="formBasicTitle">
-                <Form.Label>Title of Post</Form.Label>
-                <Form.Control required onChange={this.handleWordChange} value={title} name="title" type="text" placeholder="Title of Post" />
-              </Form.Group>
-              <Form.Group controlId="formBasicBody">
-                <Form.Label>Body of Post</Form.Label>
-                <Form.Control style={{ height: '8rem' }} required onChange={this.handleWordChange} value={body} name="body" type="text" placeholder="Body of Post" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
-            <Card.Text>
-               If you want to upload local image please use following button
-            </Card.Text>
-            <this.Example />
-          </Card.Body>
-        </Card>
+      <div id="post-create-form-field" className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+          <div className="body-wrapper">
+            <div className="content-wrapper">
+              <h3 className="create-post-header">Create New Post</h3>
+
+              {/* Upload an image in-line with the post */}
+              <this.InlineImgUpload />
+
+              <Form onSubmit={this.handleWordSubmit}>
+
+                <img src= {this.state.post.imgUrl} style={{ maxWidth: '50%' }} />
+
+                <Form.Group controlId="formBasicTitle">
+                  <Form.Label className="form-field-label">Title: </Form.Label>
+                  <Form.Control className="form-input-space" required onChange={this.handleWordChange} value={title} name="title" type="text" placeholder="Enter Title" />
+                  <Form.Text className="text-muted subtext">
+                    <b>Maximum 50 characters.</b>
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="formBasicBody">
+                  <Form.Label className="form-field-label">Body: </Form.Label>
+                  <Form.Control className="form-input-space" required onChange={this.handleWordChange} value={body} name="body" type="text" placeholder="What's on your mind?" as="textarea" rows="5" />
+                  <Form.Text className="text-muted">
+                    <b>Maximum 400 characters.</b>
+                  </Form.Text>
+                </Form.Group>
+
+                <div className="post-action-btn-container">
+                  <Button className="post-action-btn" type="submit">
+                    Submit Post
+                  </Button>
+                </div>
+
+              </Form>
+
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

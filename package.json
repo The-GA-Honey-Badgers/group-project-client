@@ -1,5 +1,5 @@
 {
-  "name": "group-project-client",
+  "name": "Envoy",
   "homepage": "https://the-ga-honey-badgers.github.io/group-project-client",
   "version": "0.1.0",
   "private": true,
@@ -18,6 +18,7 @@
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
+    "react-share": "^4.1.0",
     "resolve": "1.6.0",
     "url-loader": "0.6.2",
     "whatwg-fetch": "^3.0.0"
