@@ -35,6 +35,15 @@ const ShowPost = (props) => {
     commentId: null
   })
 
+  const updateFormReset = () => setComment({
+    body: ''
+  })
+
+  const createFormReset = () => setNewComment({
+    body: '',
+    postId: props.postId
+  })
+
   const handleUpdateInput = event => {
     const updatedField = { [event.target.name]: event.target.value }
     const newState = Object.assign({}, comment, updatedField)
@@ -61,6 +70,7 @@ const ShowPost = (props) => {
     })
       .then(() => {
         closeUpdateModal()
+        updateFormReset()
       })
       .then(() => props.msgAlert({
         heading: 'Update Comment Success',
@@ -68,6 +78,8 @@ const ShowPost = (props) => {
         variant: 'success'
       }))
       .catch(error => {
+        closeUpdateModal()
+        updateFormReset()
         props.msgAlert({
           heading: 'Update Comment Fail' + error.message,
           message: 'Update Comment Failed',
@@ -90,6 +102,7 @@ const ShowPost = (props) => {
     })
       .then(() => {
         closeCreateModal()
+        createFormReset()
       })
       .then(() => props.msgAlert({
         heading: 'Create Comment Success',
@@ -97,6 +110,8 @@ const ShowPost = (props) => {
         variant: 'success'
       }))
       .catch(error => {
+        closeCreateModal()
+        createFormReset()
         props.msgAlert({
           heading: 'Create Comment Fail' + error.message,
           message: 'Create Comment Failed',
@@ -106,7 +121,6 @@ const ShowPost = (props) => {
   }
 
   useEffect(() => {
-    console.log('I ran')
     axios(`${apiUrl}/posts/${props.postId}`)
       .then(res => {
         // console.log(res.data.post)
