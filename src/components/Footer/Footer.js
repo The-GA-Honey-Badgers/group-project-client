@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <div>
-    &copy; Copyright 2020 Envoy / The Honey Badgers, Inc.
+    &copy; Copyright 2020 Envoy, Inc. / The Honey Badgers
   </div>
 )
 
