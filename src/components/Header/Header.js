@@ -28,7 +28,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar className='navbar' variant="dark" expand="md">
+  <Navbar id="header" className='navbar' variant="dark" expand="md">
     <Navbar.Brand href="#">
       <b>Envoy</b>
     </Navbar.Brand>

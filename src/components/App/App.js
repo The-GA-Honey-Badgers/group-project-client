@@ -5,6 +5,7 @@ import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import SocialSidebar from '../SocialSidebar/SocialSidebar'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
@@ -45,6 +46,9 @@ class App extends Component {
           <Fragment>
             <div id="content-wrap">
               <Header id="header" user={user} />
+              <div>
+                <SocialSidebar />
+              </div>
               {msgAlerts.map((msgAlert, index) => (
                 <AutoDismissAlert
                   key={index}

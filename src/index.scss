@@ -25,7 +25,7 @@ background: linear-gradient(231deg, rgba(69,123,157,1) 13%, rgba(230,57,70,1) 51
 
 // <-- Header & Nav styling, keep towards the top -->
 #header {
-  position: fixed;
+  position: relative;
   top: 0;
 }
 .navbar {
