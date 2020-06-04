@@ -7,7 +7,7 @@ import './commentUpdate.scss'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
-const CommentCreate = props => {
+const CommentUpdate = props => {
   const { commentId, user } = props
 
   const [comment, setComment] = useState({
@@ -64,4 +64,4 @@ const CommentCreate = props => {
   )
 }
 
-export default withRouter(CommentCreate)
+export default withRouter(CommentUpdate)
