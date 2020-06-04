@@ -4,9 +4,10 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
-import './postIndex.scss'
+import EnvoyIcon from '../../Envoy.png'
+// <-- stylesheet inherited from 'PostIndex.js' -->
 
-const PostIndex = (props) => {
+const MyPost = (props) => {
   const [posts, setPosts] = useState(null)
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const PostIndex = (props) => {
           <div className="borderBox"></div>
           <Card.Body className="postContent">
             <div className="textBox">
-              <img className="icon" src="https://us.123rf.com/450wm/andrey1978/andrey19781505/andrey1978150500065/39845361-stock-vector-cartoon-badger-children-illustration.jpg?ver=6"/>
+              <img className="postIcon" src={EnvoyIcon}/>
               <p className="postInfo">{post.owner ? post.owner.email : 'USERNAME'}</p>
               <p className="postInfo">Posted on {post.createdAt ? post.createdAt.split('T')[0] : 'DATE'}</p>
             </div>
@@ -59,8 +60,13 @@ const PostIndex = (props) => {
           </Card.Body>
         </Card>
       ))}
+      <div id="latestPostsWrapper">
+        <div id="latestPostsBanner">
+          My Posts . . .
+        </div>
+      </div>
     </div>
   )
 }
 
-export default PostIndex
+export default MyPost

@@ -6,8 +6,9 @@ const navbarWelcomeTextStyle = {
   color: '#53005C'
 }
 const navbarEnvoyTextStyle = {
-  fontSize: '30px',
-  color: '#53005C'
+  color: '#53005C',
+  fontFamily: 'Gloria Hallelujah, Times New Roman, serif',
+  fontSize: 'clamp(15px, 4vw, 25px)'
 }
 
 const authenticatedOptions = (
@@ -36,14 +37,18 @@ const Header = ({ user }) => (
   <Navbar id="header" className='navbar' variant="dark" expand="md">
     <Navbar.Brand href="#">
       <img className="BadgerLogo" src={BadgerLogo} alt="Cartoon-ish Badger Logo"/>
-      <b style={navbarEnvoyTextStyle}>Envoy</b>
     </Navbar.Brand>
+    <div style={navbarEnvoyTextStyle}>
+      ENVOY
+    </div>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
         { user ? authenticatedOptions : unauthenticatedOptions }
         { alwaysOptions }
-        { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, {user.email}</span>}
+        <div style={{ padding: '8px 0px 0px 0px' }}>
+          { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, {user.email}</span>}
+        </div>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
