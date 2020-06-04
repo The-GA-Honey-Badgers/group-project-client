@@ -32,7 +32,7 @@ const SocialSidebar = () => (
     <div className="social-btn">
       <PinterestShareButton
         url="www.google.com"
-        media="https://i.imgur.com/tWYjp8n.png"
+        media="https://i.imgur.com/fl2wEsQ.png"
       >
         <PinterestIcon size={40} round={true} iconFillColor={'white'}/>
       </PinterestShareButton>
