@@ -1,14 +1,18 @@
-$groupRed: #A31420;
+$EnvoyPurple: #53005C;
+$EnvoyPurpleLight: #A04DA9;
+$EnvoyPurpleDark: #3A0043;
+$EnvoyWhite: #F8F8F8;
+$EnvoySilver: #C0C0C0;
 
 .create-post-header {
   padding: 10px;
-  margin: -15px 35px 50px 35px;
-  border: 2px solid black;
+  margin: -25px 35px 35px 35px;
+  border: 2px solid $EnvoyPurple;
   border-radius: 10px;
-  background-color: #457B9D;
-  color: white;
+  background-color: $EnvoyPurple;
+  color: $EnvoyWhite;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -17,25 +21,30 @@ $groupRed: #A31420;
   font-size: 1.5rem;
 }
 .form-input-space {
-  border: 1px solid black;
+  border: 1px solid $EnvoyPurpleLight;
 }
 
 
 .post-action-btn {
-  background-color: $groupRed;
-  color: white;
-  border: 1px black solid;
+  background-color: $EnvoyPurple;
+  color: $EnvoyWhite;
+  border: 3px $EnvoyPurple solid;
+  text-align: right;
     &:hover {
       background-color: transparent;
-      color: $groupRed;
-      border: 1px $groupRed solid;
+      color: $EnvoyPurple;
+      border: 3px $EnvoyPurple solid;
     }
+}
+.post-action-btn-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 
 // <-- Form Field background styling -->
 .body-wrapper {
-  border-left: 20px solid $groupRed;
+  border-left: 20px solid $EnvoyPurpleDark;
 }
 .content-wrapper {
   padding: 50px;
@@ -45,6 +54,6 @@ $groupRed: #A31420;
   border-bottom: 2px;
   border-left: 0px;
   border-style: solid;
-  border-color: black;
-  box-shadow: 10px 10px gray;
+  border-color: $EnvoyPurple;
+  // box-shadow: 10px 10px gray;
 }

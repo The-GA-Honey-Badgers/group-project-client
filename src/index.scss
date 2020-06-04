@@ -1,7 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
+$EnvoyPurple: #53005C;
+$EnvoyPurpleLight: #A04DA9;
+$EnvoyPurpleDark: #3A0043;
+$EnvoyWhite: #F8F8F8;
+$EnvoySilver: #C0C0C0;
 
 body {
-  background: lightgray;
+  background: $EnvoySilver;
 }
 
 
@@ -14,12 +19,12 @@ body {
   width: 12px;
 }
 *::-webkit-scrollbar-track {
-background: linear-gradient(231deg, rgba(69,123,157,1) 13%, rgba(230,57,70,1) 51%, rgba(69,123,157,1) 94%);
+background: linear-gradient(231deg, rgba(248, 248, 248, 1) 13%, rgba(83, 0, 92, 1) 51%, rgba(248, 248, 248, 1) 94%);
 }
 *::-webkit-scrollbar-thumb {
-  background: linear-gradient(231deg, rgba(230,57,70,1) 13%, rgba(69,123,157,1) 51%, rgba(230,57,70,1) 94%);
+  background: linear-gradient(231deg, rgba(248, 248, 248, 1) 13%, rgba(83, 0, 92, 1) 51%, rgba(248, 248, 248, 1) 94%);
   border-radius: 20px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 // <-- END Scrollbar -->
 
@@ -29,19 +34,24 @@ background: linear-gradient(231deg, rgba(69,123,157,1) 13%, rgba(230,57,70,1) 51
   top: 0;
 }
 .navbar {
-  background: #457B9D;
+  background: $EnvoyWhite;
   height: 4.5rem;
-  border-bottom: 1px black solid;
+  border-bottom: 1px $EnvoyPurple solid;
 }
 .nav-btn, .submitBtn {
-  background-color: #457B9D;
-  color: white;
-  border: 1px #457B9D solid;
+  background-color: $EnvoyPurple;
+  color: $EnvoyWhite;
+  border: 1px $EnvoyPurple solid;
     &:hover {
-      background-color: #6499B9;
-      color: #14253E;
-      border: 1px #5590B4 solid;
+      background-color: $EnvoyPurpleDark;
+      color: $EnvoyWhite;
+      border: 1px $EnvoyPurple solid;
     }
+}
+.BadgerLogo {
+  max-height: 60px;
+  padding-right: 15px;
+  background: transparent;
 }
 // <-- END Header/Nav -->
 
@@ -63,12 +73,12 @@ background: linear-gradient(231deg, rgba(69,123,157,1) 13%, rgba(230,57,70,1) 51
   bottom: 0;
   width: 100%;
   height: 1.3rem;
-  background-color: #457B9D;
+  background-color: $EnvoyWhite;
   font-size: .7rem;
-  color: white;
+  color: $EnvoyPurple;
   text-align: center;
   align-items: center;
   margin-top: .5rem;
-  border-top: 1px black solid;
+  border-top: 1px $EnvoyPurple solid;
 }
 // <-- END Footer -->

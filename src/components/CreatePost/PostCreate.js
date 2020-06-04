@@ -135,9 +135,11 @@ class PostCreate extends Component {
                   </Form.Text>
                 </Form.Group>
 
-                <Button className="post-action-btn" type="submit">
-                  Submit Post
-                </Button>
+                <div className="post-action-btn-container">
+                  <Button className="post-action-btn" type="submit">
+                    Submit Post
+                  </Button>
+                </div>
 
               </Form>
 
