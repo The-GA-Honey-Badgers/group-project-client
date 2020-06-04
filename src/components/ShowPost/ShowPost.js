@@ -62,7 +62,18 @@ const ShowPost = (props) => {
       .then(() => {
         closeUpdateModal()
       })
-      .catch(console.error)
+      .then(() => props.msgAlert({
+        heading: 'Update Comment Success',
+        message: 'Update Comment successfully!',
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Update Comment Fail' + error.message,
+          message: 'Update Comment Failed',
+          variant: 'danger'
+        })
+      })
   }
 
   const onCreateComment = event => {
@@ -80,7 +91,18 @@ const ShowPost = (props) => {
       .then(() => {
         closeCreateModal()
       })
-      .catch(console.error)
+      .then(() => props.msgAlert({
+        heading: 'Create Comment Success',
+        message: 'Create Comment successfully!',
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Create Comment Fail' + error.message,
+          message: 'Create Comment Failed',
+          variant: 'danger'
+        })
+      })
   }
 
   useEffect(() => {

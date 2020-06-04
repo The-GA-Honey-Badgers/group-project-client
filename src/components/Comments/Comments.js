@@ -28,6 +28,7 @@ const Comments = props => {
     })
       .then(() => {
         props.setRefresh(true)
+      })
       .then(() => props.msgAlert({
         heading: 'Delete Comment Success',
         message: 'Delete Comment successfully!',

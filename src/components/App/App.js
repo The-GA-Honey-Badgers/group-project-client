@@ -85,7 +85,7 @@ class App extends Component {
                     />
                   )
                 }} />
-                <Route exact path= {'/posts/:id/post-update'} render={({ match }) => {
+                <Route path= {'/posts/:id/post-update'} render={({ match }) => {
                   const currentPost = match.params.id
                   return (
                     <PostUpdate
