@@ -42,10 +42,19 @@ $groupRed: #E63946;
   }
 }
 
-.postTextBody {
+.postTextTitle{
   display: flex;
   align-items: center;
   margin-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.postTextBody{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 12px;
 }
 
 .postImage {
