@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
+import EnvoyIcon from '../../Envoy.png'
 import './postIndex.scss'
 
 const PostIndex = () => {
@@ -34,7 +35,7 @@ const PostIndex = () => {
           <div className="borderBox"></div>
           <Card.Body className="postContent">
             <div className="textBox">
-              <img className="icon" src="https://us.123rf.com/450wm/andrey1978/andrey19781505/andrey1978150500065/39845361-stock-vector-cartoon-badger-children-illustration.jpg?ver=6"/>
+              <img className="postIcon" src={EnvoyIcon}/>
               <p className="postInfo">{post.owner ? post.owner.email : 'USERNAME'}</p>
               <p className="postInfo">Posted on {post.createdAt ? post.createdAt.split('T')[0] : 'DATE'}</p>
             </div>

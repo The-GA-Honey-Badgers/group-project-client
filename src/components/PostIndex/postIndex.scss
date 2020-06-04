@@ -31,6 +31,7 @@ $groupRed: #E63946;
   margin: 10px auto;
   display: flex;
   flex-direction: row;
+  border-radius: 0px 20px 20px 0px;
 }
 
 @media only screen and (min-width: 800px) {
@@ -101,8 +102,10 @@ $groupRed: #E63946;
   font-size: 12px;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
+.postIcon {
   margin-right: 2%;
+  min-height: 25px;
+  min-width: 25px;
+  max-height: 40px;
+  max-width: 40px;
 }
