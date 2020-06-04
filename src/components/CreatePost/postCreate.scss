@@ -1,0 +1,59 @@
+$EnvoyPurple: #53005C;
+$EnvoyPurpleLight: #A04DA9;
+$EnvoyPurpleDark: #3A0043;
+$EnvoyWhite: #F8F8F8;
+$EnvoySilver: #C0C0C0;
+
+.create-post-header {
+  padding: 10px;
+  margin: -25px 35px 35px 35px;
+  border: 2px solid $EnvoyPurple;
+  border-radius: 10px;
+  background-color: $EnvoyPurple;
+  color: $EnvoyWhite;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+.form-field-label {
+  font-weight:bold;
+  font-size: 1.5rem;
+}
+.form-input-space {
+  border: 1px solid $EnvoyPurpleLight;
+}
+
+
+.post-action-btn {
+  background-color: $EnvoyPurple;
+  color: $EnvoyWhite;
+  border: 3px $EnvoyPurple solid;
+  text-align: right;
+    &:hover {
+      background-color: transparent;
+      color: $EnvoyPurple;
+      border: 3px $EnvoyPurple solid;
+    }
+}
+.post-action-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+// <-- Form Field background styling -->
+.body-wrapper {
+  border-left: 20px solid $EnvoyPurpleDark;
+}
+.content-wrapper {
+  padding: 50px;
+  background-color: white;
+  border-top: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: $EnvoyPurple;
+  // box-shadow: 10px 10px gray;
+}

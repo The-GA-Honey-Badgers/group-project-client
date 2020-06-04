@@ -1,0 +1,108 @@
+$groupRed: #E63946;
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+  > .button {
+    background-color: $groupRed;
+    border-color: transparent;
+    margin: 0 5px;
+    padding: 2px 10px;
+    font-size: 12px;
+    &:hover {
+      background-color: transparent;
+      color: $groupRed;
+      border-color: $groupRed;
+    }
+  }
+}
+
+.borderBox {
+  min-height: 100%;
+  width: 5%;
+  background-color: $groupRed;
+}
+
+.postBox {
+  width: 50vw;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 800px) {
+  .postBox {
+    width: 50vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.postTextTitle{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.postTextBody{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.commentStatsBody{
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  font-size: 8px;
+}
+
+.postImage {
+  max-height: 70vh;
+  width: 100%;
+  object-fit: contain cover;
+}
+
+.postInfo {
+  margin: 0 3px;
+}
+
+.postIndexContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0;
+  width: 50vw;
+  margin: auto;
+  & > p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.postContent {
+  padding: 0;
+  border-radius: 2px;
+  width: 95%;
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2%;
+}
