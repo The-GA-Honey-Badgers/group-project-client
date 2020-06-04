@@ -25,7 +25,14 @@ class PostUpdate extends Component {
       .then(res => {
         this.setState({ post: res.data.post })
       })
-      .catch(console.error)
+      .catch(error => {
+        this.setState({ post: {} })
+        this.props.msgAlert({
+          heading: 'Submit New Post Fail' + error.message,
+          message: 'Update Post Failed',
+          variant: 'danger'
+        })
+      })
   }
 
   handleWordChange = (event) => {
@@ -70,9 +77,9 @@ class PostUpdate extends Component {
       return <Redirect to={`/posts/${this.props.postId}`}/>
     }
     return (
-      <div>
+      <div className="update-box">
         <h3>Update Post</h3>
-        <Card style={{ width: '66%' }}>
+        <Card style={{ width: '66%' }} >
           {/* <Card.Img variant="top" src={imgUrl} /> */}
           <Card.Body>
             <Form onSubmit={this.handleWordSubmit} >

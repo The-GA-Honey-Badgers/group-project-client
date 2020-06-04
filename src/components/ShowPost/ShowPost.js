@@ -102,7 +102,7 @@ const ShowPost = (props) => {
 
   let commentsJsx = ''
   if (comments.length > 0) {
-    commentsJsx = <Comments setRefresh={setRefresh} updateModal={setUpdateModalStatus} commentArray={comments} postId={props.postId} user={props.user} />
+    commentsJsx = <Comments setRefresh={setRefresh} msgAlert={props.msgAlert} updateModal={setUpdateModalStatus} commentArray={comments} postId={props.postId} user={props.user} />
   }
 
   const onCreateClick = () => {

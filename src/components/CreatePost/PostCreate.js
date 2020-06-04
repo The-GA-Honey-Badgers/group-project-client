@@ -4,6 +4,7 @@ import apiUrl from '../../apiConfig'
 import { Form, Button } from 'react-bootstrap'
 // import postCreate stylesheet
 import './postCreate.scss'
+import { Redirect } from 'react-router-dom'
 
 class PostCreate extends Component {
   constructor (props) {
@@ -14,7 +15,7 @@ class PostCreate extends Component {
         body: null,
         imgUrl: null
       },
-      url: ''
+      success: false
     }
   }
 
@@ -47,6 +48,7 @@ class PostCreate extends Component {
         message: 'Create Post successfully!',
         variant: 'success'
       }))
+      .then(() => this.setState({ success: true }))
       .catch(error => {
         this.setState({ post: {} })
         this.props.msgAlert({
@@ -105,6 +107,9 @@ class PostCreate extends Component {
 
   render () {
     const { title, body } = this.state
+    if (this.state.success) {
+      return <Redirect to={'/my-post'}/>
+    }
     return (
       <div id="post-create-form-field" className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">

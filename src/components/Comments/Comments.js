@@ -28,8 +28,18 @@ const Comments = props => {
     })
       .then(() => {
         props.setRefresh(true)
+      .then(() => props.msgAlert({
+        heading: 'Delete Comment Success',
+        message: 'Delete Comment successfully!',
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Delete Comment Fail' + error.message,
+          message: 'Delete Comment Failed',
+          variant: 'danger'
+        })
       })
-      .catch(console.error)
   }
 
   return (
