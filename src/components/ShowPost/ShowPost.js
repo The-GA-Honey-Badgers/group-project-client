@@ -8,7 +8,8 @@ import Modal from 'react-bootstrap/Modal'
 import Comments from '../Comments/Comments'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
-import './showPost.scss'
+import EnvoyIcon from '../../Envoy.png'
+// <-- stylesheet inherited from 'PostIndex.js' -->
 
 const ShowPost = (props) => {
   const [post, setPost] = useState(null)
@@ -33,6 +34,15 @@ const ShowPost = (props) => {
   const closeUpdateModal = () => setUpdateModalStatus({
     update: false,
     commentId: null
+  })
+
+  const updateFormReset = () => setComment({
+    body: ''
+  })
+
+  const createFormReset = () => setNewComment({
+    body: '',
+    postId: props.postId
   })
 
   const handleUpdateInput = event => {
@@ -61,6 +71,7 @@ const ShowPost = (props) => {
     })
       .then(() => {
         closeUpdateModal()
+        updateFormReset()
       })
       .then(() => props.msgAlert({
         heading: 'Update Comment Success',
@@ -68,6 +79,8 @@ const ShowPost = (props) => {
         variant: 'success'
       }))
       .catch(error => {
+        closeUpdateModal()
+        updateFormReset()
         props.msgAlert({
           heading: 'Update Comment Fail' + error.message,
           message: 'Update Comment Failed',
@@ -90,6 +103,7 @@ const ShowPost = (props) => {
     })
       .then(() => {
         closeCreateModal()
+        createFormReset()
       })
       .then(() => props.msgAlert({
         heading: 'Create Comment Success',
@@ -97,6 +111,8 @@ const ShowPost = (props) => {
         variant: 'success'
       }))
       .catch(error => {
+        closeCreateModal()
+        createFormReset()
         props.msgAlert({
           heading: 'Create Comment Fail' + error.message,
           message: 'Create Comment Failed',
@@ -106,7 +122,6 @@ const ShowPost = (props) => {
   }
 
   useEffect(() => {
-    console.log('I ran')
     axios(`${apiUrl}/posts/${props.postId}`)
       .then(res => {
         // console.log(res.data.post)
@@ -185,7 +200,7 @@ const ShowPost = (props) => {
         <div className="borderBox"></div>
         <Card.Body className="postContent">
           <div className="textBox">
-            <img className="icon" src="https://us.123rf.com/450wm/andrey1978/andrey19781505/andrey1978150500065/39845361-stock-vector-cartoon-badger-children-illustration.jpg?ver=6"/>
+            <img className="postIcon" src={EnvoyIcon}/>
             <p className="postInfo">{post.owner ? post.owner.email : 'USERNAME'}</p>
             <p className="postInfo">Posted on {post.createdAt ? post.createdAt.split('T')[0] : 'DATE'}</p>
           </div>

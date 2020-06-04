@@ -10,7 +10,6 @@ const Comments = props => {
   const postComments = props.commentArray
 
   const onUpdateClick = commentId => {
-    console.log('hello, world!')
     // console.log('the commentId: ', commentId)
     props.updateModal({
       update: true,
