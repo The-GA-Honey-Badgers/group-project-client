@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
-import { Nav, Navbar, Button } from 'react-bootstrap'
+import { Nav, Navbar, Button, Dropdown, DropdownButton } from 'react-bootstrap'
 import BadgerLogo from '../../Honey-Badger.png'
+// import { Link } from 'react-router-dom'
 
 const navbarWelcomeTextStyle = {
   color: '#53005C'
@@ -13,10 +14,7 @@ const navbarEnvoyTextStyle = {
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#my-post"><Button className='nav-btn'>My Post</Button></Nav.Link>
-    <Nav.Link href="#post-create"><Button className='nav-btn'>Create Post</Button></Nav.Link>
-    <Nav.Link href="#change-password"><Button className='nav-btn'>Change Password</Button></Nav.Link>
-    <Nav.Link href="#sign-out"><Button className='nav-btn'>Sign Out</Button></Nav.Link>
+    <Nav.Link href="#/post-create"><Button className='nav-btn'>Create Post</Button></Nav.Link>
   </Fragment>
 )
 
@@ -46,8 +44,12 @@ const Header = ({ user }) => (
       <Nav className="ml-auto">
         { user ? authenticatedOptions : unauthenticatedOptions }
         { alwaysOptions }
-        <div style={{ padding: '8px 0px 0px 0px' }}>
-          { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, {user.email}</span>}
+        <div style={{ padding: '0px 0px 0px 0px' }}>
+          { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, <DropdownButton drop="down" className="userdropdown-button" title={user.email}>
+            <Dropdown.Item href="#my-post"><Button>My Post</Button></Dropdown.Item>
+            <Dropdown.Item href="#/change-password"><Button>Change Password</Button></Dropdown.Item>
+            <Dropdown.Item href="#/sign-out"><Button>Sign Out</Button></Dropdown.Item>
+          </DropdownButton></span>}
         </div>
       </Nav>
     </Navbar.Collapse>

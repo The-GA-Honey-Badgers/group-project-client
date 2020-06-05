@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Form, Button } from 'react-bootstrap'
 // import postCreate stylesheet
-import './postCreate.scss'
+import './postCreateOrUpdate.scss'
 import { Redirect } from 'react-router-dom'
 
 class PostCreate extends Component {
@@ -30,7 +30,7 @@ class PostCreate extends Component {
   }
 
   handleWordSubmit = (event) => {
-    console.log(this.props.user.token)
+    // console.log(this.props.user.token)
     event.preventDefault()
     axios({
       method: 'POST',
@@ -44,16 +44,16 @@ class PostCreate extends Component {
         return this.setState({ post: res.data.post })
       })
       .then(() => this.props.msgAlert({
-        heading: 'Submit Post Success',
-        message: 'Create Post successfully!',
+        heading: 'Created!',
+        message: 'Successfully created a new post',
         variant: 'success'
       }))
       .then(() => this.setState({ success: true }))
       .catch(error => {
         this.setState({ post: {} })
         this.props.msgAlert({
-          heading: 'Submit Post Fail' + error.message,
-          message: 'Create Post Failed',
+          heading: 'Failed to create post: ' + error.message,
+          message: 'Please try again',
           variant: 'danger'
         })
       })
@@ -69,7 +69,7 @@ class PostCreate extends Component {
       data: formData
     })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         // console.log('this is image upload response', res.data.upload.imageUrl)
         localStorage.setItem('imgUrl', res.data.upload.imageUrl)
         const imgUrl = { imgUrl: res.data.upload.imageUrl }
@@ -77,15 +77,15 @@ class PostCreate extends Component {
         this.setState({ post: newState })
       })
       .then(() => this.props.msgAlert({
-        heading: 'Upload Image Success',
-        message: 'Create Image successfully!',
+        heading: 'Uploaded Image!',
+        message: 'Uploaded image successfully',
         variant: 'success'
       }))
       .catch(error => {
         this.setState({ post: {} })
         this.props.msgAlert({
-          heading: 'Upload Image Fail' + error.message,
-          message: 'Create Image Failed',
+          heading: 'Failed to upload image: ' + error.message,
+          message: 'Please try again',
           variant: 'danger'
         })
       })
