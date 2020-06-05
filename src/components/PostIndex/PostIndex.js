@@ -59,7 +59,7 @@ const PostIndex = () => {
       ))}
       <div id="latestPostsWrapper">
         <div id="latestPostsBanner">
-          Latest Posts . . .
+          The Latest Posts
         </div>
       </div>
     </div>

@@ -141,8 +141,6 @@ $EnvoySilver: #C0C0C0;
   font-size: 36px;
   font-size: clamp(32px, 4vw, 36px);
   color: $EnvoyPurple;
-  background: $EnvoyWhite;
-  border-radius: 10px;
   padding: .5% 1.5% .5% 1.5%;
-  border: 1.5px solid $EnvoySilver;
+  text-decoration: underline;
 }

@@ -62,7 +62,7 @@ const MyPost = (props) => {
       ))}
       <div id="latestPostsWrapper">
         <div id="latestPostsBanner">
-          My Posts . . .
+          My Posts
         </div>
       </div>
     </div>
