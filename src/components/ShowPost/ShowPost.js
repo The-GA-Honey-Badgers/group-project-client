@@ -220,13 +220,13 @@ const ShowPost = (props) => {
             </div>
           </div>
           <div className="buttonBox">
+            { props.user && <Button onClick={onCreateClick} className="button">Create Comment</Button>}
+            <Button as={Link} to='/' className="button">Back to Latest Posts</Button>
             { props.user &&
             <div>
-              <Button onClick={handleDeleteClick} className="button">Delete Post</Button>
               <Button as={Link} to={props.match.url + '/post-update'} className="button">Update Post</Button>
+              <Button onClick={handleDeleteClick} className="button delete-button">Delete Post</Button>
             </div> }
-            <Button as={Link} to='/' className="button">Main Feed</Button>
-            { props.user && <Button onClick={onCreateClick} className="button">Create Comment</Button>}
           </div>
           {commentsJsx}
         </Card.Body>
