@@ -21,7 +21,7 @@ class PostShow extends Component {
         return respost.filter(post => post.owner._id === userid)
       })
       .then(posts => this.setState({ posts: posts }))
-      .catch(console.error)
+      // .catch(console.error)
   }
 
   render () {

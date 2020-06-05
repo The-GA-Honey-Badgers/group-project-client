@@ -131,7 +131,7 @@ const ShowPost = (props) => {
         // console.log(res.data.post)
         setPost(res.data.post)
       })
-      .catch(console.error)
+      // .catch(console.error)
   }, [showUpdateModal, refresh, showCreateModal])
 
   if (!post) {

@@ -30,7 +30,7 @@ class PostCreate extends Component {
   }
 
   handleWordSubmit = (event) => {
-    console.log(this.props.user.token)
+    // console.log(this.props.user.token)
     event.preventDefault()
     axios({
       method: 'POST',
@@ -69,7 +69,7 @@ class PostCreate extends Component {
       data: formData
     })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         // console.log('this is image upload response', res.data.upload.imageUrl)
         localStorage.setItem('imgUrl', res.data.upload.imageUrl)
         const imgUrl = { imgUrl: res.data.upload.imageUrl }

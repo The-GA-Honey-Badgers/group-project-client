@@ -20,7 +20,7 @@ const MyPost = (props) => {
         // console.log(res.data.posts)
         setPosts(response)
       })
-      .catch(console.error)
+      // .catch(console.error)
   }, [])
 
   if (!posts) {
