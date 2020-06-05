@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import { Form, Button } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom'
 import '../CreatePost/postCreateOrUpdate.scss'
 
