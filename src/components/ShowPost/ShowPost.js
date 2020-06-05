@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Modal from 'react-bootstrap/Modal'
+import { Card, Button, Form, Modal } from 'react-bootstrap'
 import Comments from '../Comments/Comments'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import EnvoyIcon from '../../Envoy.png'
+import '../Comments/commentModal.scss'
 // <-- stylesheet inherited from 'PostIndex.js' -->
 
 const ShowPost = (props) => {
@@ -168,35 +166,27 @@ const ShowPost = (props) => {
 
   return (
     <div>
-      <Modal show={showUpdateModal.update} onHide={closeUpdateModal}>
+      <Modal className="commentModal" show={showUpdateModal.update} onHide={closeUpdateModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Comment</Modal.Title>
+          <Modal.Title>Update a comment:</Modal.Title>
         </Modal.Header>
         <Form onSubmit={onUpdateComment}>
-          <Form.Label>Comment Text</Form.Label>
-          <Form.Control required maxLength='200' value={comment.body} name="body" as="textarea" placeholder="Comment Update" onChange={handleUpdateInput} />
+          <Form.Control required maxLength='200' value={comment.body} name="body" as="textarea" placeholder="Maximum 200 characters..." onChange={handleUpdateInput} />
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeUpdateModal}>
-            Close
-            </Button>
-            <Button variant="primary" type="submit">
+            <Button className="commentModalSubmitBtn" type="submit">
             Update Comment
             </Button>
           </Modal.Footer>
         </Form>
       </Modal>
-      <Modal show={showCreateModal} onHide={closeCreateModal}>
+      <Modal className="commentModal" show={showCreateModal} onHide={closeCreateModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Add a new comment</Modal.Title>
+          <Modal.Title>Add a comment:</Modal.Title>
         </Modal.Header>
         <Form onSubmit={onCreateComment}>
-          <Form.Label>Comment Text</Form.Label>
-          <Form.Control required maxLength='200' value={newComment.body} name="body" as="textarea" placeholder="Comment" onChange={handleCreateInput} />
+          <Form.Control required maxLength='200' value={newComment.body} name="body" as="textarea" placeholder="Maximum 200 characters..." onChange={handleCreateInput} />
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeCreateModal}>
-            Close
-            </Button>
-            <Button variant="primary" type="submit">
+            <Button className="commentModalSubmitBtn" type="submit">
             Post Comment
             </Button>
           </Modal.Footer>
