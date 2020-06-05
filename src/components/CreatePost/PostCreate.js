@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Form, Button } from 'react-bootstrap'
 // import postCreate stylesheet
-import './postCreate.scss'
+import './postCreateOrUpdate.scss'
 import { Redirect } from 'react-router-dom'
 
 class PostCreate extends Component {

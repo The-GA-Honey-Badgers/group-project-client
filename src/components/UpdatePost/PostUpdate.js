@@ -3,8 +3,8 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 import { Redirect } from 'react-router-dom'
+import '../CreatePost/postCreateOrUpdate.scss'
 
 class PostUpdate extends Component {
   constructor (props) {
@@ -77,26 +77,41 @@ class PostUpdate extends Component {
       return <Redirect to={`/posts/${this.props.postId}`}/>
     }
     return (
-      <div className="update-box">
-        <h3>Update Post</h3>
-        <Card style={{ width: '66%' }} >
-          {/* <Card.Img variant="top" src={imgUrl} /> */}
-          <Card.Body>
-            <Form onSubmit={this.handleWordSubmit} >
-              <Form.Group controlId="formBasicTitle">
-                <Form.Label>Title of Post</Form.Label>
-                <Form.Control required onChange={this.handleWordChange} value={title} name="title" type="text" placeholder="Title of Post" />
-              </Form.Group>
-              <Form.Group controlId="formBasicBody">
-                <Form.Label>Body of Post</Form.Label>
-                <Form.Control style={{ height: '8rem' }} required onChange={this.handleWordChange} value={body} name="body" type="text" placeholder="Body of Post" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+      <div id="post-create-form-field" className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+          <div className="body-wrapper">
+            <div className="content-wrapper">
+              <h3 className="create-post-header">Update Post</h3>
+
+              <Form onSubmit={this.handleWordSubmit}>
+
+                <Form.Group controlId="formBasicTitle">
+                  <Form.Label className="form-field-label">Title: </Form.Label>
+                  <Form.Control className="form-input-space" onChange={this.handleWordChange} value={title} name="title" type="text" placeholder="Need to update the title?" />
+                  <Form.Text className="text-muted subtext">
+                    <b>Maximum 50 characters.</b>
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="formBasicBody">
+                  <Form.Label className="form-field-label">Body: </Form.Label>
+                  <Form.Control className="form-input-space" onChange={this.handleWordChange} value={body} name="body" type="text" placeholder="Need to make any changes?" as="textarea" rows="5" />
+                  <Form.Text className="text-muted">
+                    <b>Maximum 400 characters.</b>
+                  </Form.Text>
+                </Form.Group>
+
+                <div className="post-action-btn-container">
+                  <Button className="post-action-btn" type="submit">
+                    Update Post
+                  </Button>
+                </div>
+
+              </Form>
+
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
