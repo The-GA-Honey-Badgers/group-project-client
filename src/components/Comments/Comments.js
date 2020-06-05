@@ -48,7 +48,10 @@ const Comments = props => {
         <div className='comment' key={comment._id}>
           <div className="flexWrapper">
             <div>
-              <div className='username'>{comment.author ? comment.author.email : 'USERNAME'}</div>
+              <div className='username'>
+                <span>{comment.author ? comment.author.email : 'USERNAME'}</span>
+                <span style={{ 'margin-left': '5px' }}>Added on {comment.createdAt ? comment.createdAt.split('T')[0] : 'DATE'}</span>
+              </div>
               <div className='commentBody'>{comment.body}</div>
             </div>
             {user &&
