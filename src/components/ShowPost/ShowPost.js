@@ -29,12 +29,18 @@ const ShowPost = (props) => {
 
   const [showCreateModal, setCreateModalStatus] = useState(false)
 
-  const closeCreateModal = () => setCreateModalStatus(false)
+  const closeCreateModal = () => {
+    setCreateModalStatus(false)
+    createFormReset()
+  }
 
-  const closeUpdateModal = () => setUpdateModalStatus({
-    update: false,
-    commentId: null
-  })
+  const closeUpdateModal = () => {
+    setUpdateModalStatus({
+      update: false,
+      commentId: null
+    })
+    updateFormReset()
+  }
 
   const updateFormReset = () => setComment({
     body: ''
