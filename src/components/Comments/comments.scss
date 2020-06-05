@@ -1,26 +1,43 @@
-$groupRed: #E63946;
+// Import fonts & other styling
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+
+// Declare color scheme variables
+$DeleteRed: #E63946;
+$EnvoyPurple: #53005C;
+$EnvoyCommentSideGreen: #095C00;
+$EnvoyCommentSideBlue: #00375C;
 
 .comment {
-  border-left: 3px solid black;
+  border-left: 5px solid $EnvoyCommentSideBlue;
   display: flex;
   flex-direction: column;
   margin: 5px 0 5px 1px;
   padding-left: 10px;
   max-width: 100%;
   overflow: auto;
+  font-family: 'Alegreya', serif;
+  font-weight: 500;
 }
 
 .button {
   height: 50%;
-  background-color: $groupRed;
+  background-color: $EnvoyPurple;
   border-color: transparent;
   margin: 0 5px;
   padding: 2px 10px;
   font-size: 12px;
   &:hover {
     background-color: transparent;
-    color: $groupRed;
-    border-color: $groupRed;
+    color: $EnvoyPurple;
+    border-color: $EnvoyPurple;
+  }
+}
+#delete-button {
+  background-color: $DeleteRed;
+  &:hover {
+    color: $DeleteRed;
+    border-color: $DeleteRed;
+    background-color: transparent;
   }
 }
 
@@ -31,13 +48,13 @@ $groupRed: #E63946;
 }
 
 .username {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .commentBody {
   margin-right: 5px;
   min-width: 60%;
-  font-size: 12px;
+  font-size: 14px;
   word-wrap: break-word;
   word-break: break-all;
 }

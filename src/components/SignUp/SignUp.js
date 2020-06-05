@@ -52,33 +52,36 @@ class SignUp extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign Up</h3>
+          <h3><u>Sign Up</u></h3>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className="form-field-label">Email Address:</Form.Label>
               <Form.Control
+                className="form-input-space"
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter Email Address"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="form-field-label">Password:</Form.Label>
               <Form.Control
+                className="form-input-space"
                 required
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Enter Password"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label className="form-field-label">Password Confirmation:</Form.Label>
               <Form.Control
+                className="form-input-space"
                 required
                 name="passwordConfirmation"
                 value={passwordConfirmation}

@@ -58,8 +58,8 @@ $EnvoySilver: #C0C0C0;
   margin: 0px 10px 5px 10px;
   font-family: 'Alegreya', serif;
   font-weight: 800;
-  font-size: 24px;
-  font-size: clamp(22px, 4vw, 24px);
+  font-size: 28px;
+  font-size: clamp(26px, 4vw, 28px);
   // font-style: italic;
 }
 .postTextBody{
@@ -68,8 +68,8 @@ $EnvoySilver: #C0C0C0;
   margin: 5px 10px 10px 10px;
   font-family: 'Alegreya', serif;
   font-weight: 500;
-  font-size: 16px;
-  font-size: clamp(16px, 4vw, 16px);
+  font-size: 20px;
+  font-size: clamp(18px, 4vw, 20px);
 }
 .commentStatsBody{
   display: flex;
@@ -141,8 +141,6 @@ $EnvoySilver: #C0C0C0;
   font-size: 36px;
   font-size: clamp(32px, 4vw, 36px);
   color: $EnvoyPurple;
-  background: $EnvoyWhite;
-  border-radius: 10px;
   padding: .5% 1.5% .5% 1.5%;
-  border: 1.5px solid $EnvoySilver;
+  text-decoration: underline;
 }

@@ -9,6 +9,9 @@ $EnvoyPurpleLight: #A04DA9;
 $EnvoyPurpleDark: #3A0043;
 $EnvoyWhite: #F8F8F8;
 $EnvoySilver: #C0C0C0;
+$EnvoyCommentSideGreen: #095C00;
+$EnvoyCommentSideBlue: #00375C;
+$DeleteRed: #E63946;
 
 body {
   background: $EnvoySilver;
@@ -63,10 +66,15 @@ background: linear-gradient(231deg, rgba(248, 248, 248, 1) 13%, rgba(83, 0, 92, 
   display: inline-block;
 }
 div.dropdown-menu.show {
+  position: relative;
+  right: 50px;
   background: transparent;
   border: none;
+    &:hover {
+      background: transparent;
+    }
 }
-button.dropdown-toggle.btn.btn-primary, button.btn.btn-primary{
+.dropdown-toggle.btn.btn-primary, .btn.btn-primary{
   color: #fff;
   background-color: #53005C;
   border-color: #53005C;
@@ -76,11 +84,16 @@ button.dropdown-toggle.btn.btn-primary, button.btn.btn-primary{
         border: 1px $EnvoyPurple solid;
       }
 }
+.dropdown-item {
+    padding: 0.25rem 0rem 0.25rem 0rem;
+    &:hover {
+      background: transparent;
+    }
+  }
+#basic-navbar-nav {
+  padding-right: 2%;
+}
 // <-- END Header/Nav -->
-
-
-
-
 
 
 // <-- Footer styling, keep at the bottom -->

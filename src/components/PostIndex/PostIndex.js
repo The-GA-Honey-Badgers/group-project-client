@@ -16,7 +16,7 @@ const PostIndex = () => {
         // console.log(res.data.posts)
         setPosts(res.data.posts)
       })
-      .catch(console.error)
+      // .catch(console.error)
   }, [])
 
   if (!posts) {
@@ -59,7 +59,7 @@ const PostIndex = () => {
       ))}
       <div id="latestPostsWrapper">
         <div id="latestPostsBanner">
-          Latest Posts . . .
+          The Latest Posts
         </div>
       </div>
     </div>
