@@ -7,7 +7,7 @@ const SocialSidebar = () => (
 
     <div className="social-btn">
       <FacebookShareButton
-        url="www.google.com"
+        url="https://the-ga-honey-badgers.github.io/group-project-client/#/"
       >
         <FacebookIcon size={40} round={true} iconFillColor={'white'}/>
       </FacebookShareButton>
@@ -15,7 +15,7 @@ const SocialSidebar = () => (
 
     <div className="social-btn">
       <LinkedinShareButton
-        url="www.google.com"
+        url="https://the-ga-honey-badgers.github.io/group-project-client/#/"
       >
         <LinkedinIcon size={40} round={true} iconFillColor={'white'}/>
       </LinkedinShareButton>
@@ -23,7 +23,7 @@ const SocialSidebar = () => (
 
     <div className="social-btn">
       <TwitterShareButton
-        url="www.google.com"
+        url="https://the-ga-honey-badgers.github.io/group-project-client/#/"
       >
         <TwitterIcon size={40} round={true} iconFillColor={'white'}/>
       </TwitterShareButton>
@@ -31,7 +31,7 @@ const SocialSidebar = () => (
 
     <div className="social-btn">
       <PinterestShareButton
-        url="www.google.com"
+        url="https://the-ga-honey-badgers.github.io/group-project-client/#/"
         media="https://i.imgur.com/fl2wEsQ.png"
       >
         <PinterestIcon size={40} round={true} iconFillColor={'white'}/>
@@ -41,7 +41,7 @@ const SocialSidebar = () => (
     <div className="social-btn">
       <EmailShareButton
         subject="Come check out Envoy!"
-        url="www.google.com"
+        url="https://the-ga-honey-badgers.github.io/group-project-client/#/"
         body="Hey! I'm inviting you to check out this awesome website that I recently discovered called 'Envoy' where you can share some thoughts and photos in a public space. Come check it out!"
       >
         <EmailIcon size={40} round={true} iconFillColor={'white'}/>
