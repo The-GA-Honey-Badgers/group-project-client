@@ -215,7 +215,7 @@ const ShowPost = (props) => {
             { props.user &&
             <div>
               <Button as={Link} to={props.match.url + '/post-update'} className="button">Update Post</Button>
-              <Button onClick={handleDeleteClick} className="button delete-button">Delete Post</Button>
+              <Button onClick={handleDeleteClick} id="delete-button" className="button delete-button">Delete Post</Button>
             </div> }
           </div>
           {commentsJsx}

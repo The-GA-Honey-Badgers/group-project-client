@@ -32,11 +32,12 @@ $EnvoyCommentSideBlue: #00375C;
     border-color: $EnvoyPurple;
   }
 }
-.delete-button {
+#delete-button {
   background-color: $DeleteRed;
   &:hover {
     color: $DeleteRed;
     border-color: $DeleteRed;
+    background-color: transparent;
   }
 }
 

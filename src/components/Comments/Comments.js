@@ -57,7 +57,7 @@ const Comments = props => {
             {user &&
             <div className="buttonContainer">
               <Button onClick={() => onUpdateClick(comment._id)} className="button">Update</Button>
-              <Button className="button delete-button" onClick={() => onCommentDelete(comment._id, comment.postId)}>Delete</Button>
+              <Button id="delete-button" className="button delete-button" onClick={() => onCommentDelete(comment._id, comment.postId)}>Delete</Button>
             </div>}
           </div>
         </div>

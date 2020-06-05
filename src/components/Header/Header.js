@@ -14,7 +14,7 @@ const navbarEnvoyTextStyle = {
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#my-post"><Button className='nav-btn'>My Post</Button></Nav.Link>
+    <Nav.Link href="#/post-create"><Button className='nav-btn'>Create Post</Button></Nav.Link>
   </Fragment>
 )
 
@@ -45,8 +45,8 @@ const Header = ({ user }) => (
         { user ? authenticatedOptions : unauthenticatedOptions }
         { alwaysOptions }
         <div style={{ padding: '0px 0px 0px 0px' }}>
-          { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, <DropdownButton className="userdropdown-button" title={user.email}>
-            <Dropdown.Item href="#/post-create"><Button>Create Post</Button></Dropdown.Item>
+          { user && <span style={navbarWelcomeTextStyle} className="navbar-text mr-2">Welcome, <DropdownButton drop="down" className="userdropdown-button" title={user.email}>
+            <Dropdown.Item href="#my-post"><Button>My Post</Button></Dropdown.Item>
             <Dropdown.Item href="#/change-password"><Button>Change Password</Button></Dropdown.Item>
             <Dropdown.Item href="#/sign-out"><Button>Sign Out</Button></Dropdown.Item>
           </DropdownButton></span>}
